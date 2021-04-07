@@ -1,7 +1,5 @@
 ﻿using DIOSeries.Enum;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DIOSeries.Classes
 {
@@ -11,6 +9,7 @@ namespace DIOSeries.Classes
         private string Titulo { get; set; }
         private string Descricao { get; set; }
         private int Ano { get; set; }
+        private bool Excluido { get; set; }
 
         //Metodo (Constructor)
         public Serie(int id, Genero genero, string titulo, string descricao, int ano)
@@ -20,6 +19,7 @@ namespace DIOSeries.Classes
             this.Titulo = titulo;
             this.Descricao = descricao;
             this.Ano = ano;
+            this.Excluido = false;
         }
 
         public override string ToString()
@@ -28,12 +28,12 @@ namespace DIOSeries.Classes
             // o environment basicamente identifica qual o sistem operacional está 
             //utilizando e insere a quebra de linha automaticamente.
             string retorno = "";
-            retorno += "Gênero: " + this.Genero + Environment.NewLine; 
+            retorno += "Gênero: " + this.Genero + Environment.NewLine;
             retorno += "Título: " + this.Titulo + Environment.NewLine;
             retorno += "Descrição: " + this.Descricao + Environment.NewLine;
             retorno += "Ano de Inicio: " + this.Ano;
             return retorno;
-            
+
         }
 
         //encapsulamentos: 
@@ -47,6 +47,11 @@ namespace DIOSeries.Classes
         internal int retornaId()
         {
             return this.Id;
+        }
+
+        public void excluir()
+        {
+            this.Excluido = true;
         }
     }
 }
