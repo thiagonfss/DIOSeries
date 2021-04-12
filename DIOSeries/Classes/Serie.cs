@@ -32,6 +32,7 @@ namespace DIOSeries.Classes
             retorno += "Título: " + this.Titulo + Environment.NewLine;
             retorno += "Descrição: " + this.Descricao + Environment.NewLine;
             retorno += "Ano de Inicio: " + this.Ano;
+            retorno += "Excluído: : " + this.Excluido;
             return retorno;
 
         }
@@ -43,7 +44,10 @@ namespace DIOSeries.Classes
         {
             return this.Titulo;
         }
-
+        public bool retornaExcluido()
+        {
+            return this.Excluido;
+        }
         internal int retornaId()
         {
             return this.Id;
